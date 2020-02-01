@@ -10,15 +10,11 @@
 		<div>
 			<h1><a href="/">Jose blog</a></h1>
 		</div>
-		<div>
-			<p>Published: 14.06.2019, 12:16</p>
-			<h2><a href="">Post 1</a></h2>
-			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cum quo illo sapiente tenetur, quia assumenda magni rerum dicta temporibus eaque excepturi consequatur totam enim tempora sit laborum et delectus.</p>
-		</div>
-		<div>
-			<p>Published: 14.08.2019, 08:16</p>
-			<h2><a href="">Post 1</a></h2>
-			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cum quo illo sapiente tenetur, quia assumenda magni rerum dicta temporibus eaque excepturi consequatur totam enim tempora sit laborum et delectus.</p>
-		</div>
+
+		{% for post in posts %}
+			<p>Published: {{ post.published_date }}</p>
+			<h2><a href="">{{ post.title }}</a></h2>
+			<p>{{ post.text|linebreaksbr }}</p>
+		{% endfor %}
 	</body>
 </html>
